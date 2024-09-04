@@ -2,23 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rive/rive.dart';
 import 'package:flutter/src/painting/gradient.dart' as grad;
-import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 void main() {
   runApp(const MyApp());
-  //Remove this method to stop OneSignal Debugging
-  OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
-
-  OneSignal.initialize("90572428-163f-4cca-b860-212a214a91d0");
-
-// The promptForPushNotificationsWithUserResponse function will show the iOS or Android push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission
-  OneSignal.Notifications.requestPermission(true);
-
-  OneSignal.Notifications.setNotificationOpenedHandler((openedResult) {
-    // Handle notification tap action here
-    print(
-        "Notification opened: ${openedResult.notification.jsonRepresentation()}");
-  });
 }
 
 class MyApp extends StatelessWidget {
